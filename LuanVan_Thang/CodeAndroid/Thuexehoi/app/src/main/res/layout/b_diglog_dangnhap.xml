@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E1E1">
+
+    <LinearLayout
+        android:background="#5EB649"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/txt_dangnhap"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Đăng nhập tài khoản"
+            android:textAllCaps="false"
+            android:textSize="25sp" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+            <EditText
+                android:textColor="#000"
+                android:inputType="textNoSuggestions"
+                android:paddingLeft="10dp"
+                android:id="@+id/ed_use"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="2sp"
+                android:hint="Nhập tài khoản" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            app:passwordToggleContentDescription="trieu oi la trieu"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#009688">
+
+            <EditText
+                android:textColor="#000"
+                android:paddingLeft="10dp"
+                android:id="@+id/ed_pass"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="2sp"
+                android:hint="Nhập mật khẩu"
+                android:inputType="textPassword|textNoSuggestions" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_dangnhap">
+
+            <Button
+                android:background="@null"
+                android:id="@+id/btn_huydangnhap"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:text="Hủy đăng nhập"
+                android:textAllCaps="false" />
+
+            <Button
+                android:background="@null"
+                android:id="@+id/btn_dangnhap"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                android:text="Đăng nhập"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

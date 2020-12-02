@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000"
+    tools:context=".Activity_main.ChitietXeTrangChu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EB649"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <TextView
+                    android:text="Mercedes C200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tenxe"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    android:layout_marginStart="25dp" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--       group slider         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#fff">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpagers_fragment_trangchu"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="2dp" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/circleIndicators_fragment_trangchu"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="150dp"
+                app:ci_drawable="@drawable/mau" />
+
+        </RelativeLayout>
+        <!--      End group slider         -->
+
+        <!--       group tên xe         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/txt_tenxe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="Mercedes C200"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+        <!--     End  group tên xe         -->
+
+        <!--       group thoi gian         -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:paddingLeft="10dp"
+            android:text="Thời gian"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/ic_ngay"
+                        android:gravity="center"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/txt_tg_batdau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="08h:000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:background="#fff"
+                        android:gravity="center_vertical"
+                        android:text="-"
+                        android:textColor="#00BCD4"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/txt_ngay_batdau"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="19/08/1995" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="#fff">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/txt_sniper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="Thời gian kết thúc: " />
+
+            <TextView
+                android:id="@+id/txt_tg_ketthuc"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="08h:000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:text="-"
+                android:textColor="#00BCD4"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/txt_ngay_ketthuc"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="19/08/1995" />
+        </LinearLayout>
+        <!--     End  group thoi gian         -->
+
+
+        <!--       group địa điểm         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/icondiadiem"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_diadiem"
+                android:gravity="center_vertical"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/txt_diadiem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/icondiadiem"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="Hồ Chí Minh"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+        <!--     End  group đại điểm         -->
+
+
+        <!--       group Thông tin lộ trình         -->
+        <LinearLayout
+            android:id="@+id/content_thongtinlotrinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:paddingLeft="10dp"
+                android:text="Thông tin lộ trình"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/cnt_sokmtoida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Số km tối đa di được là: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_so_km_toida"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="80 km"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cnt_sokmphuthu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Số phụ thu vượt 80 km: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_so_tienphuthuTren1km"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="6 nghìn/km"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/cnt_khonggioihan"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:textStyle="italic"
+                    android:id="@+id/txt_khonggioihan"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Không giới hạn km"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--     End  group  Thông tin lộ trình        -->
+
+        <!--       group Thông tin lộ trình         -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:paddingLeft="10dp"
+                android:text="Chi tiết giá"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Đơn giá thuê"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/txt_giathue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                        android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:text="396.695 đ"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Phí đưa đón "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_phiduadon"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Miễn phí"
+                    android:paddingRight="20dp"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Chi phí:  "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_chiphi"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:text="850đ X 1 ngày"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:text="Tổng cộng:  "
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_so_tienTongcong"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:minHeight="50dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:text="50000.000 đ"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <!--     End  group chi tiết        -->
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:paddingLeft="10dp"
+            android:text="Đặc điểm"
+            android:textColor="#000"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:paddingBottom="10dp"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_gravity="center_horizontal"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/soghe"
+                    android:gravity="center_horizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <TextView
+                    android:id="@+id/txt_soghe"
+                    android:gravity="center"
+                    android:text="Số ghế"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_gravity="center_horizontal"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/xang"
+                    android:gravity="center_horizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <TextView
+                    android:id="@+id/txt_nhienlieu"
+                    android:gravity="center"
+                    android:text="Xăng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:layout_gravity="center_horizontal"
+                    android:background="#fff"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sosang"
+                    android:gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+                <TextView
+                    android:id="@+id/txt_truyendong"
+                    android:gravity="center"
+                    android:text="Số tự động"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--      END       đăc điểm-->
+        <!--       group đặt xe         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <Button
+                android:id="@+id/btn_datxe"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#14A51A"
+                android:text="Đăt xe"
+                android:textColor="#fff">
+            </Button>
+
+        </RelativeLayout>
+        <!--     End  group đặt xe        -->
+
+        <!--       group loại xe liên quan         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="5dp"
+            android:background="#fff">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:text="Xe liên quan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_xelienquan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+        </RelativeLayout>
+        <!--     End  group loại xe liên quan       -->
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

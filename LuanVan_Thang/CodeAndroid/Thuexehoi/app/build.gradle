@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+    defaultConfig {
+        applicationId "com.phamvanthang.thuexehoi"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    /// ...
+    // thêm thư viện
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    //
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    // thư viện hổ trợ các dấu chấm chuyển theo hình khi chuyển
+    implementation 'me.relex:circleindicator:2.1.4'
+
+    // thư viện đi net kiểu khoa phạm
+    implementation 'com.android.volley:volley:1.1.1'
+    // thư viện volley để insert dữ liệu
+    implementation 'com.android.volley:volley:1.1.0'
+
+
+    //
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.3.0-alpha03'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
+
+    //        ...........................       //
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    // thu vien buttom navigation
+    implementation 'com.google.android.material:material:1.0.0'
+    //.. khung hình tròn trong  z_test_header
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+//    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    // thư viện đi net kiểu khoa phạm
+    implementation 'com.android.volley:volley:1.1.1'
+    // thư viện volley để insert dữ liệu
+    implementation 'com.android.volley:volley:1.1.0'
+
+    // thư viện recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // thư viện cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+    // thư viện tạo slider
+    // thư viện hổ trợ các dấu chấm chuyển theo hình khi chuyển
+    implementation 'me.relex:circleindicator:2.1.4'
+    // thư viện hổ trợ slider auto
+    implementation 'com.google.android.material:material:1.3.0-alpha03'
+
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0-RC1'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:support-fragment:26.1.0"
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+
+    // thêm thư viện
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+
+
+    //
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+
+}

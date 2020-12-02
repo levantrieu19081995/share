@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".Activity_main.Datxe">
+    <!--    <TextView-->
+    <!--        android:id="@+id/txt_txt"-->
+    <!--        android:textColor="#fff"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="dat xe"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5EB649"
+                android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <TextView
+                    android:id="@+id/tenxe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:text="Mercedes C200"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--       group hinh         -->
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#fff">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/img_hinh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <!--      End group hinh         -->
+
+        <!--       group tên xe         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/txt_tenxe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="Mercedes C200"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <!--     End  group tên xe         -->
+
+        <!--       group thoi gian         -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:minHeight="50dp"
+            android:paddingLeft="10dp"
+            android:text="Thời gian"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/ic_ngay"
+                        android:gravity="center"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="Bắt đầu: " />
+
+                    <TextView
+                        android:id="@+id/txt_tg_batdau"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="right|center_vertical"
+                        android:text="08h:000" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#fff">
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_ngay"
+                android:gravity="center"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:gravity="center"
+                android:text="Kết thức: " />
+
+            <TextView
+                android:id="@+id/txt_tg_ketthuc"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:gravity="right|center_vertical"
+                android:text="08h:000" />
+
+        </LinearLayout>
+        <!--     End  group thoi gian         -->
+
+
+        <!--       group địa điểm         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/icondiadiem"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_diadiem"
+                android:gravity="center_vertical"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/txt_diadiem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_toRightOf="@+id/icondiadiem"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="Hồ Chí Minh"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+        <!--     End  group đại điểm         -->
+        <!--       group nội dung       -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="Ghi chú"
+                android:textColor="#000"
+                android:textSize="18sp"  />
+
+            <EditText
+                android:id="@+id/edit_noidung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:hint="Nhập nội dung mà bạn cần yêu cầu"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <!--     End  group  nội dung       -->
+
+        <!--       group tổng chi phí         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/txt_tongchiphis"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:text="Tổng chi phí:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_tongchiphi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/txt_tongchiphis"
+                android:gravity="right|center_vertical"
+                android:minHeight="50dp"
+                android:text="800k"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+        <!--     End  group  tổng chi phí         -->
+
+
+
+        <!--       group đặt xe         -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="#fff">
+
+            <Button
+                android:id="@+id/btn_xn_datxe"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#14A51A"
+                android:text="Xác nhận đăt xe"
+                android:textColor="#fff"></Button>
+
+        </RelativeLayout>
+        <!--     End  group đặt xe        -->
+
+    </LinearLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
