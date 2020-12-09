@@ -13,7 +13,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class Class_bien_duongdan {
-    public static final String ip_server = "http://192.168.1.13/Thang";
+    public static final String ip_server = "http://192.168.1.16/Thang";
 
     public static class DowloadImg extends AsyncTask<String,Void, Bitmap> {
         private ImageView imgHinh;

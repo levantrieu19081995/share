@@ -2,10 +2,10 @@
 // http://localhost/Thang/dangnhap.php
 	require_once("connect.php");
 
-	// $sdt_dn = $_POST["sodienthoai"];
-	// $mk_dn = $_POST["passss"];	
-	$sdt_dn = "123";
-	$mk_dn = "123";
+	$sdt_dn = $_POST["sodienthoai"];
+	$mk_dn = $_POST["passss"];	
+	// $sdt_dn = "123";
+	// $mk_dn = "123";
 
 	$sv_mssv="";
 	class Dangnhap

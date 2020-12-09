@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".Activity_main.CapnhatThongTin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="Thông tin cá nhân"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:paddingLeft="15dp"
+        android:inputType="text"
+        android:id="@+id/edit_hoten"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="   Họ và tên" />
+
+    <EditText
+        android:paddingLeft="15dp"
+        android:inputType="number"
+        android:id="@+id/edit_giaypheplayxe"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="   Số giấy phép lái xe" />
+
+    <EditText
+        android:paddingLeft="15dp"
+        android:inputType="text"
+        android:id="@+id/edit_diachi"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="   Địa chỉ" />
+
+    <EditText
+        android:paddingLeft="15dp"
+        android:inputType="number"
+        android:id="@+id/edit_socmnd"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="   Số CMND" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:id="@+id/txt_capnhat"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Cập nhật"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/txt_huycapnhat"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Hủy cập nhật"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

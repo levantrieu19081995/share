@@ -22,7 +22,7 @@
 	$ma_tk = "";
 	$mangDangKy = array();
 
-	$q = "insert TaiKhoan(TenDangNhap, MatKhau, LoaiTK, TrangThai) values('$sdt_dk', '$pass_dk', N'Khách hàng','1')";
+	$q = "insert TaiKhoan(TenDangNhap, MatKhau, MaLoaiTK, TrangThai) values('$sdt_dk', '$pass_dk', N'2','1')";
 	$ex = sqlsrv_query($conn , $q);
 
 	if($ex){

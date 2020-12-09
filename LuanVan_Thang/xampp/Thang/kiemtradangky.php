@@ -3,7 +3,7 @@
 	require_once("connect.php");
 
 	$tendangnhap = $_POST["tendangnhap"];
-	// $tendangnhap = 1;
+	// $tendangnhap = "0931113414";
 	
 	class KiemTraDangKy
 	{

@@ -150,6 +150,7 @@ public class Dangky extends AppCompatActivity {
 
     //..
     private void dangky() {
+
         if(kiemTraThongTinNhap()){
             RequestQueue requestQueue = Volley.newRequestQueue( getApplicationContext() );
             StringRequest stringRequest = new StringRequest( Request.Method.POST, url_dangky,
@@ -160,7 +161,6 @@ public class Dangky extends AppCompatActivity {
                                 JSONArray jsonArray = new JSONArray( response );
                                 JSONObject jsonObject = jsonArray.getJSONObject( 0 );
                                 Ketquadangky = jsonObject.getString( "ketqua" ).replace( "\r", "" ).replace( "\n", "" ).trim();
-
                                 //..
                                 if (Ketquadangky.trim().equals( "thanhcong" )) {
                                     Toast.makeText( Dangky.this, "Đăng ký thành công !", Toast.LENGTH_SHORT ).show();

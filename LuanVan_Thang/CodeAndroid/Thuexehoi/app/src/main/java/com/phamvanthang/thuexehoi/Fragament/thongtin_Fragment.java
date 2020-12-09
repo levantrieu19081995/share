@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -27,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
+import com.phamvanthang.thuexehoi.Activity_main.CapnhatThongTin;
 import com.phamvanthang.thuexehoi.Activity_main.Dangky;
 import com.phamvanthang.thuexehoi.Adapter.Adapter_xe_dathue;
 import com.phamvanthang.thuexehoi.Adapter.Adapter_xe_trangchu;
@@ -46,13 +49,15 @@ import java.util.List;
 import java.util.Map;
 
 
-public class thongtin_Fragment extends Fragment {
+public class thongtin_Fragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     Button btn_login, btn_dangxuat;
-    TextView txt_dangky;
+    TextView txt_dangky,txt_capnhat_tt;
     LinearLayout ln_noidungthongtin, ln_dangnhap;
     Dialog dialog_dangxuat;
     Button btn_huy_dangxuat, btn_dongy_dangxuat;
+
+    SwipeRefreshLayout setOnRefreshListener;
 
     TextView txt_tennguoidung,txt_giaypheplx_tt,txt_email_tt,txt_sdt_tt,txt_diachi_tt,txt_cmnd_tt,txt_loaikh_tt;
     ImageView image_nguoidung;
@@ -105,6 +110,20 @@ public class thongtin_Fragment extends Fragment {
             }
         } );
         //..
+        txt_capnhat_tt.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makh_DaDangNhap_sharedPreferences = sharedPreferences_thongtinnguoidung.getString( "makh", "" );
+                Intent i = new Intent( getContext(), CapnhatThongTin.class );
+                i.putExtra( "hoten", txt_tennguoidung.getText().toString());
+                i.putExtra( "giaypheplx", txt_giaypheplx_tt.getText().toString().trim());
+                i.putExtra( "diachi", txt_diachi_tt.getText().toString());
+                i.putExtra( "cmnd", txt_cmnd_tt.getText().toString());
+                i.putExtra( "makh", makh_DaDangNhap_sharedPreferences);
+                startActivity( i );
+            }
+        } );
+        //..
         btn_dangxuat.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,6 +131,15 @@ public class thongtin_Fragment extends Fragment {
                 XuLynoidung_dialog_dangxuat();
             }
         } );
+
+        setOnRefreshListener = view.findViewById( R.id.refresh_fragment );
+        setOnRefreshListener.setOnRefreshListener(this);
+        setOnRefreshListener.setColorScheme(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
+
         return view;
     }
     //___________________________________________________________________________________________//
@@ -121,8 +149,11 @@ public class thongtin_Fragment extends Fragment {
         btn_login = view.findViewById( R.id.btn_login );
         btn_dangxuat = view.findViewById( R.id.btn_dangxuat );
         txt_dangky = view.findViewById( R.id.txt_dangky );
+        txt_capnhat_tt = view.findViewById( R.id.txt_capnhat_tt );
         ln_noidungthongtin = view.findViewById( R.id.ln_noidungthongtin );
         ln_dangnhap = view.findViewById( R.id.ln_dangnhapthongtin );
+
+
 
         dangnhap_mk = view.findViewById( R.id.dangnhap_mk );
         dangnhap_sdt = view.findViewById( R.id.dangnhap_sdt );
@@ -254,8 +285,8 @@ public class thongtin_Fragment extends Fragment {
                             if (Ketquatruyvan.trim().equals( "thatbai" )) {
                                 System.out.println( "______________________trieu: " + "Đăng nhập KHÔNG thành công..!" );
 
-                                ln_dangnhap.setVisibility( View.GONE );
-                                ln_noidungthongtin.setVisibility( View.VISIBLE );
+                                ln_dangnhap.setVisibility( View.VISIBLE );
+                                ln_noidungthongtin.setVisibility( View.GONE );
                                 Snackbar.make( getView(), "Đăng nhập thất bại!", Snackbar.LENGTH_SHORT ).show();
                             }
 //                            System.out.println( Ketquatruyvan + '-' + Hoten + '-' + Hoten + '-' + Hinh );
@@ -348,13 +379,30 @@ public class thongtin_Fragment extends Fragment {
                             String makh = jsonObject.getString( "makh" );
                             String stk = jsonObject.getString( "stk" );
                             txt_tennguoidung.setText( jsonObject.getString( "ten" ) );
-                            txt_giaypheplx_tt .setText(jsonObject.getString( "gplx" ));
+                            String giayphep_lx = jsonObject.getString( "gplx" );
                             txt_email_tt .setText(jsonObject.getString( "email" ));
                             txt_sdt_tt .setText(jsonObject.getString( "sdt" ));
-                            txt_diachi_tt .setText(jsonObject.getString( "diachi" ));
-                            txt_cmnd_tt .setText(jsonObject.getString( "cmnd" ));
+                            String dichi = jsonObject.getString( "diachi" );
+                            String cmnd = jsonObject.getString( "cmnd" );
                             String mlkh=jsonObject.getString( "maloaikh" );
                             String Hinh = jsonObject.getString( "Hinh" );
+
+                            if (giayphep_lx.equals( "null" ) || giayphep_lx.equals( "" )) {
+                                txt_giaypheplx_tt .setText("");
+                            } else {
+                                txt_giaypheplx_tt .setText(jsonObject.getString( "gplx" ));
+                            }
+
+                            if (dichi.equals( "null" ) || dichi.equals( "" )) {
+                                txt_diachi_tt .setText("");
+                            } else {
+                                txt_diachi_tt .setText(jsonObject.getString( "diachi" ));
+                            }
+                            if (cmnd.equals( "null" ) || cmnd.equals( "" )) {
+                                txt_cmnd_tt .setText("");
+                            } else {
+                                txt_cmnd_tt .setText(jsonObject.getString( "cmnd" ));
+                            }
 
                             if (mlkh.equals( "null" ) || mlkh.equals( "" )) {
                                 txt_loaikh_tt.setText( "Thuê xe" );
@@ -362,8 +410,8 @@ public class thongtin_Fragment extends Fragment {
                                 txt_loaikh_tt.setText(mlkh);
                             }
 
-                            if (Hinh.equals( "" )|| Hinh.equals( null )) {
-                                image_nguoidung.setImageResource( R.mipmap.ic_launcher );
+                            if (Hinh.equals( "" )|| Hinh.equals( null )|| Hinh.equals( "null" )) {
+                                image_nguoidung.setImageResource( R.drawable.noimage2 );
                             } else {
                                 Glide.with( getContext() ).load( Class_bien_duongdan.ip_server + Hinh.trim() ).into( image_nguoidung );
                             }
@@ -394,5 +442,15 @@ public class thongtin_Fragment extends Fragment {
         };
         requestQueue.add( stringRequest );
     }
+
+    @Override
+    public void onRefresh() {
+        setOnRefreshListener.setRefreshing(false);
+        lay_ThongTin_tuTaiKhoan();
+        System.out.println("___________________cc8");
+    }
+
+
+
     //__________________________________________________________________________________________________________________________________________//
 }
